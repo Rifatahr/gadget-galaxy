@@ -1,0 +1,237 @@
+
+[
+  {
+    "product_id": 1,
+    "product_title": "MacBook Pro M4 Max",
+    "product_image": "https://i.ibb.co.com/jkgJkT7w/Mac-Book-Pro-M3-16inch-Silver-3587.webp",
+    "category": "Computers",
+    "price": 1999,
+    "description": "High-performance laptop designed for AI, development, and creative professionals.",
+    "Specification": [
+      "14-inch Liquid Retina XDR",
+      "Apple M4 Max Chip",
+      "36GB Unified Memory",
+      "1TB SSD",
+      "Wi-Fi 7"
+    ],
+    "availability": true,
+    "rating": 4.8
+  },
+  {
+    "product_id": 2,
+    "product_title": "ASUS ROG Zephyrus RTX 4070",
+    "product_image": "https://i.ibb.co.com/1fTmW2gZ/ASUS-ROG-Zephyrus-G16-GU605-MI-QR078-W-2561.webp",
+    "category": "Computers",
+    "price": 1899,
+    "description": "Premium gaming laptop with ultra-smooth display and ray tracing.",
+    "Specification": [
+      "16-inch QHD 240Hz",
+      "Intel Core i9 14th Gen",
+      "32GB DDR5 RAM",
+      "1TB NVMe SSD",
+      "NVIDIA RTX 4070"
+    ],
+    "availability": true,
+    "rating": 4.7
+  },
+  {
+    "product_id": 3,
+    "product_title": "Samsung Galaxy Book 5 Ultra",
+    "product_image": "https://i.ibb.co.com/zyB5MZk/Samsung-Galaxy-Book-Pro-Intel-Iris-Xe-Graphics-15.webp",
+    "category": "Computers",
+    "price": 1699,
+    "description": "Slim ultrabook with AMOLED display and AI acceleration.",
+    "Specification": [
+      "16-inch AMOLED",
+      "Intel Core Ultra 9",
+      "32GB RAM",
+      "1TB SSD",
+      "Intel Arc GPU"
+    ],
+    "availability": true,
+    "rating": 4.6
+  },
+  {
+    "product_id": 4,
+    "product_title": "iPhone 17 Pro Max Ultra",
+    "product_image": "https://i.ibb.co.com/4ZgdBfW2/apple-iphone-17-pro-max-cosmic-orange-official-image.webp",
+    "category": "Phones",
+    "price": 1399,
+    "description": "Apple flagship phone with AI-powered photography and titanium body.",
+    "Specification": [
+      "6.9-inch ProMotion OLED",
+      "A19 Pro AI Chip",
+      "512GB Storage",
+      "Periscope Camera",
+      "Satellite SOS"
+    ],
+    "availability": true,
+    "rating": 4.9
+  },
+  {
+    "product_id": 5,
+    "product_title": "Google Pixel 10 Pro",
+    "product_image": "https://i.ibb.co.com/fdK13fDp/Google-Pixel-10-Pro.webp",
+    "category": "Phones",
+    "price": 899,
+    "description": "AI-first smartphone with advanced computational photography.",
+    "Specification": [
+      "6.7-inch LTPO OLED",
+      "Tensor G5 AI",
+      "256GB Storage",
+      "AI Call Assist",
+      "Wi-Fi 7"
+    ],
+    "availability": true,
+    "rating": 4.6
+  },
+  {
+    "product_id": 6,
+    "product_title": "Samsung Galaxy S26 AI",
+    "product_image": "https://i.ibb.co.com/Mxwm1SLD/image-27-1024x775.webp",
+    "category": "Phones",
+    "price": 1099,
+    "description": "AI-optimized flagship smartphone with advanced performance.",
+    "Specification": [
+      "6.8-inch Dynamic AMOLED",
+      "Exynos AI Processor",
+      "12GB RAM",
+      "256GB Storage",
+      "5G Advanced"
+    ],
+    "availability": true,
+    "rating": 4.5
+  },
+  {
+    "product_id": 7,
+    "product_title": "Apple Watch Series 11 Ultra",
+    "product_image": "https://i.ibb.co.com/xK5m7c12/Apple-Watch-Series-11-Ultra.jpg",
+    "category": "Smart Watches",
+    "price": 499,
+    "description": "Health-focused smartwatch with AI insights and rugged design.",
+    "Specification": [
+      "ECG & Blood Oxygen",
+      "AI Health Alerts",
+      "Dual GPS",
+      "100m Water Resistance",
+      "72-hour Battery"
+    ],
+    "availability": true,
+    "rating": 4.7
+  },
+  {
+    "product_id": 8,
+    "product_title": "Samsung Galaxy Watch 7 Pro",
+    "product_image": "https://i.ibb.co.com/Xk3Xppk5/Samsung-Galaxy-Watch-7-Pro.jpg",
+    "category": "Smart Watches",
+    "price": 449,
+    "description": "Premium smartwatch with fitness and health tracking.",
+    "Specification": [
+      "BioActive Sensor",
+      "Sleep Coaching",
+      "Built-in GPS",
+      "LTE Support",
+      "Fast Charging"
+    ],
+    "availability": true,
+    "rating": 4.5
+  },
+  {
+    "product_id": 9,
+    "product_title": "GaN Fast Charger 140W",
+    "product_image": "https://i.ibb.co.com/93VK6vdh/Ga-N-Fast-Charger-140-W.webp",
+    "category": "Chargers",
+    "price": 89,
+    "description": "Next-gen GaN charger for laptops and smartphones.",
+    "Specification": [
+      "140W Output",
+      "GaN Technology",
+      "USB-C PD 3.1",
+      "Thermal Protection"
+    ],
+    "availability": true,
+    "rating": 4.6
+  },
+  {
+    "product_id": 10,
+    "product_title": "MagSafe Wireless Charger 25W",
+    "product_image": "https://i.ibb.co.com/g26zkX9/Mag-Safe-Wireless-Charger-25-W.jpg",
+    "category": "Chargers",
+    "price": 79,
+    "description": "Fast magnetic wireless charger with Qi2 support.",
+    "Specification": [
+      "25W Wireless Charging",
+      "Qi2 Certified",
+      "Magnetic Alignment",
+      "Overheat Protection"
+    ],
+    "availability": true,
+    "rating": 4.4
+  },
+  {
+    "product_id": 11,
+    "product_title": "Power Bank 30000mAh Smart",
+    "product_image": "https://i.ibb.co.com/nqS3VLFb/Power-Bank-30000m-Ah-Smart.webp",
+    "category": "Power Banks",
+    "price": 110,
+    "description": "High-capacity power bank with intelligent power management.",
+    "Specification": [
+      "30000mAh Capacity",
+      "100W Fast Charging",
+      "Digital Display",
+      "Triple Output"
+    ],
+    "availability": true,
+    "rating": 4.5
+  },
+  {
+    "product_id": 12,
+    "product_title": "Slim Power Bank 10000mAh",
+    "product_image": "https://i.ibb.co.com/dh1fKD6/Slim-Power-Bank-10000m-Ah.jpg",
+    "category": "Power Banks",
+    "price": 59,
+    "description": "Compact and lightweight power bank for daily use.",
+    "Specification": [
+      "10000mAh Capacity",
+      "22.5W Fast Charge",
+      "LED Indicator",
+      "Ultra Slim Design"
+    ],
+    "availability": true,
+    "rating": 4.3
+  },
+  {
+    "product_id": 13,
+    "product_title": "iPad Pro M4",
+    "product_image": "https://i.ibb.co.com/W9RKnRG/i-Pad-Pro-M4.jpg",
+    "category": "Tablets",
+    "price": 1299,
+    "description": "Powerful tablet with desktop-class performance.",
+    "Specification": [
+      "13-inch OLED Display",
+      "Apple M4 Chip",
+      "512GB Storage",
+      "Apple Pencil Pro Support",
+      "Wi-Fi 7"
+    ],
+    "availability": true,
+    "rating": 4.8
+  },
+  {
+    "product_id": 14,
+    "product_title": "Samsung Galaxy Tab S10 Ultra",
+    "product_image": "https://i.ibb.co.com/4RgJD75J/Samsung-Galaxy-Tab-S10-Ultra.webp",
+    "category": "Tablets",
+    "price": 1199,
+    "description": "Large-screen premium tablet for productivity and entertainment.",
+    "Specification": [
+      "14.6-inch AMOLED Display",
+      "Snapdragon 8 Gen AI",
+      "16GB RAM",
+      "512GB Storage",
+      "S-Pen Included"
+    ],
+    "availability": true,
+    "rating": 4.7
+  }
+]
