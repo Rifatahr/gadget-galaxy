@@ -7,8 +7,8 @@ const Categories = ({ categories }) => {
 
 
     return (
-        <div className="grid grid-cols-1 md:grid-cols-4  mx-auto mt-10 pb-24 gap-y-6 ">
-            <div className="col-span-1 grid grid-cols-2 md:grid-cols-1 gap-6 md:w-5/6 lg:w-10/12 mx-auto rounded-2xl bg-white p-6 self-start border-2 border-gray-200 ">
+        <div className=" container mx-auto grid grid-cols-1 md:grid-cols-4 mt-10 pb-24 gap-y-6 ">
+            <div className="col-span-1 grid grid-cols-2 md:grid-cols-1 gap-6 md:w-5/6 lg:w-10/12 mx-auto rounded-2xl bg-white p-6 self-start  ">
 
                 {categories.map((category) => (
                     <CategoryCard

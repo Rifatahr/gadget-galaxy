@@ -26,7 +26,7 @@ const Cards = () => {
 
 
     return (
-       <div className="col-span-3 grid grid-cols-1 md:grid-cols-3 gap-6">
+       <div className="col-span-3 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 pr-6">
   
        {devices.length > 0 ? (
         devices.map((product) => (

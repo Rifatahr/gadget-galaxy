@@ -1,10 +1,14 @@
+import { useNavigate } from "react-router-dom";
 import bannerImg from "../assets/banner.jpg"
 
 
 
 const Banner = () => {
+
+  const navigate = useNavigate();
     return (
-        <div className="relative hero px-4 sm:px-12 bg-purple-700 text-center pt-12 pb-48 rounded-b-2xl">
+        <div className="mx-8">
+          <div className= "relative  hero px-4 sm:px-12 bg-purple-700 text-center pt-12 pb-48 rounded-b-3xl">
       <div className="hero-content flex flex-col items-center mb-40 lg:mb-20">
         <div className="max-w-5xl  text-white">
           <h1 className="text-3xl sm:text-5xl font-bold text-white">
@@ -18,11 +22,11 @@ const Banner = () => {
 
         
 
-          <button className="btn rounded-2xl bg-white text-purple-600 hover:bg-purple-100">
+          <button onClick={() => navigate("/dashboard")} className="btn rounded-2xl bg-white text-purple-600 hover:bg-purple-100">
             Shop Now
           </button>
         </div>
-        <div className="relative w-full max-w-4xl  lg:mt-0 lg:absolute lg:-bottom-56 transition-colors outline outline-offset-8 outline-white rounded-3xl h-[300px] lg:h-[450px]">
+        <div className="relative w-full max-w-4xl  lg:mt-0 lg:absolute lg:-bottom-56 transition-colors outline outline-offset-8 outline-white  rounded-3xl h-75 lg:h-112">
           <img
             src={bannerImg}
             className="rounded-3xl w-full h-full object-cover"
@@ -31,6 +35,7 @@ const Banner = () => {
         </div>
       </div>
     </div>
+        </div>
     );
 };
 

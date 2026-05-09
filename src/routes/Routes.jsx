@@ -5,6 +5,7 @@ import Statistics from "../pages/Statistics"
 import Dashboard from "../pages/Dashboard"
 import ErrorPage from "../pages/ErrorPage"
 import Cards from "../components/Cards"
+import ViewDetails from "../pages/ViewDetails"
 
 
 const routes = createBrowserRouter([
@@ -28,11 +29,18 @@ const routes = createBrowserRouter([
             element: <Cards></Cards>,
             loader: () => fetch('../gadget-galaxy-data.json'),
           },
+          
 
           
         ],
         
       },
+      {
+            path: '/product/:id',
+            element: <ViewDetails></ViewDetails>,
+              loader: () => fetch(`/gadget-galaxy-data.json`),
+            
+          },
       {
         path: '/Statistics',
         element: <Statistics></Statistics>,

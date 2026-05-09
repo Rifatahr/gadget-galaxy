@@ -1,7 +1,8 @@
 import { Link, NavLink, useLocation } from "react-router-dom";
-import logoImg from "../assets/responsivelogo.png"
+import logoImg from "../assets/gadget_11733818.png"
 import { AiOutlineShoppingCart } from "react-icons/ai";
 import { MdFavoriteBorder } from "react-icons/md";
+import { IoMdMenu } from "react-icons/io";
 
 
 
@@ -14,17 +15,21 @@ const Navbar = () => {
 
 
 const navbarColorSwitch = isHome
-    ? " bg-purple-700 text-white rounded-t-lg"
-    : " bg-white text-black rounded-full";
-
+    ? " mx-8 bg-purple-700 text-white rounded-t-3xl"
+    : " bg-white text-black rounded-lg";
+// http://www.w3.org/2000/svg
 
   return (
-    <div className={`inter container mx-auto  navbar bg-base-100 shadow-sm ${navbarColorSwitch}`}>
+    <div className={`inter  shadow-sm ${navbarColorSwitch}`}>
 
-      <div className="navbar-start">
+      <div className="container  mx-auto navbar mt-1.5 ">
+        <div className="navbar-start">
         <div className="dropdown">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden  ">
-            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"> <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /> </svg>
+           
+            <IoMdMenu className="h-7 w-7"  ></IoMdMenu>
+            
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /> 
           </div>
           <ul
             tabIndex="-1"
@@ -53,6 +58,7 @@ const navbarColorSwitch = isHome
       <div className="navbar-end gap-4">
         <Link className=" text-xl btn p-2 rounded-full"><AiOutlineShoppingCart /></Link>
         <Link className="text-xl btn p-2 rounded-full"><MdFavoriteBorder /></Link>
+      </div>
       </div>
     </div>
   );
