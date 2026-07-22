@@ -8,7 +8,7 @@ const Banner = () => {
   const navigate = useNavigate();
     return (
         <div className="mx-8">
-          <div className= "relative  hero px-4 sm:px-12 bg-purple-700 text-center pt-12 pb-48 rounded-b-3xl">
+          <div className= "relative  hero px- sm:px-12 bg-purple-700 text-center pt-12 pb-48 rounded-b-3xl">
       <div className="hero-content flex flex-col items-center mb-40 lg:mb-20">
         <div className="max-w-5xl  text-white">
           <h1 className="text-3xl sm:text-5xl font-bold text-white">

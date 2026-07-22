@@ -17,7 +17,8 @@ const Navbar = () => {
 const navbarColorSwitch = isHome
     ? " mx-8 bg-purple-700 text-white rounded-t-3xl"
     : " bg-white text-black rounded-lg";
-// http://www.w3.org/2000/svg
+    
+
 
   return (
     <div className={`inter  shadow-sm ${navbarColorSwitch}`}>
@@ -43,7 +44,7 @@ const navbarColorSwitch = isHome
 
             <div className="flex justify-center items-center gap-1.5">
               <span className="w-10"> <img src={logoImg} alt="" /> </span>
-              <h1 className=" font-bold text-2xl">GadgetHeaven</h1></div>
+              <h1 className=" font-bold text-lg md:text-2xl">GadgetHeaven</h1></div>
 
 
           </Link>
@@ -56,8 +57,8 @@ const navbarColorSwitch = isHome
         </ul>
       </div>
       <div className="navbar-end gap-4">
-        <Link className=" text-xl btn p-2 rounded-full"><AiOutlineShoppingCart /></Link>
-        <Link className="text-xl btn p-2 rounded-full"><MdFavoriteBorder /></Link>
+        <Link to="/DashBoard" className=" text-xl btn p-2 rounded-full"><AiOutlineShoppingCart /></Link>
+        <Link to="/DashBoard" className="text-xl btn p-2 rounded-full"><MdFavoriteBorder /></Link>
       </div>
       </div>
     </div>

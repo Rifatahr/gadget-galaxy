@@ -12,7 +12,7 @@ const MainLayout = () => {
             <Navbar></Navbar>
 
             {/* {Dynamic Section} */}
-            <div className="inter min-h-[calc(100vh-385px)] ">
+            <div className="inter min-h-[calc(100vh-485px)] ">
                
              <Outlet></Outlet>
             </div>
