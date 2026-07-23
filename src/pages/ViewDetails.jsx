@@ -11,6 +11,10 @@ const ViewDetails = () => {
   const { id } = useParams();
   const data = useLoaderData();
 
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [id]);
+
   const allData = data?.find((item) => item.product_id === parseInt(id)) || {};
 
   const {
@@ -55,12 +59,12 @@ const ViewDetails = () => {
 
   return (
     /* Main Layout Wrapper */
-    <div className="relative w-full bg-gray-50 pb-24 md:pb-64">
+    <div className="relative w-full bg-gray-50 pb-16">
       {/* 2. Toast Container component (displays notifications in top-right corner) */}
       <Toaster position="top-center" reverseOrder={false} />
 
       {/* Header Section */}
-      <div className="bg-[#9538E2] text-white pt-8 pb-36 md:pb-48 px-4">
+      <div className="bg-[#9538E2] text-white pt-8 pb-32 md:pb-40 px-4 text-center">
         <Heading
           title={"Product Details"}
           subtitle={
@@ -70,7 +74,8 @@ const ViewDetails = () => {
       </div>
 
       {/* Product Details Card */}
-      <div className="w-11/12 max-w-5xl mx-auto bg-white text-black p-5 md:p-8 rounded-3xl shadow-xl border border-gray-100 relative -translate-y-24 md:-translate-y-32 flex flex-col md:flex-row gap-8 lg:gap-12 items-start">
+      <div className="w-11/12 max-w-5xl mx-auto bg-white text-black p-6 md:p-8 rounded-3xl shadow-xl border border-gray-100 -mt-20 md:-mt-28 relative z-10 flex flex-col md:flex-row gap-8 lg:gap-10 items-stretch">
+      
         {/* Left Side: Image Container */}
         <div className="w-full md:w-5/12 rounded-2xl flex justify-center items-center self-stretch min-h-74 md:min-h-100">
           <img

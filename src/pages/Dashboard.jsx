@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import Heading from "../components/Heading";
+import toast, { Toaster } from "react-hot-toast";
 import { 
   getCart, 
   getWishlist, 
@@ -10,8 +11,10 @@ import {
   clearAllItemCart 
 } from "../components/Utility";
 import modalSuccessImg from "../assets/Group.png";
-import { HiAdjustmentsVertical } from "react-icons/hi2";
 import { RxCrossCircled } from "react-icons/rx";
+import { FaArrowCircleUp } from "react-icons/fa";
+import { FaArrowCircleDown } from "react-icons/fa";
+
 
 const Dashboard = () => {
   const navigate = useNavigate();
@@ -24,6 +27,9 @@ const Dashboard = () => {
 
   // 1. State for controlling the modal visibility reliably
   const [isModalOpen, setIsModalOpen] = useState(false);
+
+  // 2. State to track current sort direction ('desc' | 'asc' | null)
+  const [sortOrder, setSortOrder] = useState(null);
 
   useEffect(() => {
     document.title = "Dashboard | Gadget Heaven";
@@ -44,15 +50,32 @@ const Dashboard = () => {
     setTotalCost(sum);
   };
 
+  // 3. Enhanced Sort Handler (Toggles High->Low and Low->High with Toast)
   const handleSortByPrice = () => {
-    const sorted = [...cartItems].sort((a, b) => b.price - a.price);
+    if (cartItems.length <= 1) return;
+
+    // Toggle: if null or 'asc', switch to 'desc' (High to Low); otherwise switch to 'asc' (Low to High)
+    const nextOrder = sortOrder === "desc" ? "asc" : "desc";
+    setSortOrder(nextOrder);
+
+    const sorted = [...cartItems].sort((a, b) => {
+      return nextOrder === "desc" ? b.price - a.price : a.price - b.price;
+    });
+
     setCartItems(sorted);
+
+    // Show Toast Notification
+    toast.success(
+      `Sorted by price: ${nextOrder === "desc" ? "H to L" : "L to H"}`
+    );
   };
 
-  const handleDeleteFromCart = (id) => {
+const handleDeleteFromCart = (id) => {
     removeFromCart(id);
     loadData();
+    setSortOrder(null); // Reset sort state when item removed
   };
+
 
   const handleDeleteFromWishlist = (id) => {
     removeFromWishlist(id);
@@ -70,6 +93,7 @@ const Dashboard = () => {
     clearAllItemCart();
     setCartItems([]);
     setTotalCost(0);
+    setSortOrder(null);
 
     setIsModalOpen(true); // Triggers modal display
   };
@@ -125,11 +149,24 @@ const Dashboard = () => {
                 <p className="text-xl font-bold text-gray-800">
                   Total cost: ${totalCost.toFixed(2)}
                 </p>
+                {/* 4. Functional Sort Button */}
                 <button
+                  disabled={cartItems.length <= 1}
                   onClick={handleSortByPrice}
-                  className="btn border-[#9538E2] text-[#9538E2] hover:bg-[#9538E2] hover:text-white rounded-full px-6 font-semibold flex items-center gap-2"
+                  className={`btn rounded-full px-6 font-semibold flex items-center gap-2 transition-all ${
+                    cartItems.length <= 1
+                      ? "bg-gray-200 text-gray-400 border-gray-200 cursor-not-allowed"
+                      : "border-[#9538E2] text-[#9538E2] hover:bg-[#9538E2] hover:text-white"
+                  }`}
                 >
-                  Sort by Price <HiAdjustmentsVertical className="text-lg" />
+                  Sort by Price{" "}
+                  {sortOrder === "desc"
+                    ? <FaArrowCircleDown className="text-lg"/>
+                    : sortOrder === "asc"
+                    ? <FaArrowCircleUp className="text-lg" />
+                    : ""}
+                  
+                 
                 </button>
                 <button
                   disabled={cartItems.length === 0 || totalCost === 0}
