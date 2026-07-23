@@ -22,6 +22,9 @@ const Dashboard = () => {
   const [totalCost, setTotalCost] = useState(0);
   const [purchaseAmount, setPurchaseAmount] = useState(0);
 
+  // 1. State for controlling the modal visibility reliably
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
   useEffect(() => {
     document.title = "Dashboard | Gadget Heaven";
   }, []);
@@ -68,13 +71,12 @@ const Dashboard = () => {
     setCartItems([]);
     setTotalCost(0);
 
-    const modal = document.getElementById("purchase_modal");
-    if (modal) modal.showModal();
+    setIsModalOpen(true); // Triggers modal display
   };
 
+// 3. Close Modal and navigate to Home
   const handleCloseModal = () => {
-    const modal = document.getElementById("purchase_modal");
-    if (modal) modal.close();
+    setIsModalOpen(false);
     navigate("/");
   };
 
@@ -248,7 +250,7 @@ const Dashboard = () => {
       </div>
 
       {/* Success Modal */}
-      <dialog id="purchase_modal" className="modal modal-bottom sm:modal-middle">
+      <dialog className={`modal modal-bottom sm:modal-middle ${isModalOpen ? "modal-open" : ""}`}>
         <div className="modal-box text-center p-8 rounded-3xl">
           <div className="flex justify-center mb-4">
             <img src={modalSuccessImg} alt="Success" className="w-16 h-16" />
