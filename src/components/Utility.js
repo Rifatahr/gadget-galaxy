@@ -24,7 +24,7 @@ const addToCart = (obj) => {
     }
     getData.push(obj);
     localStorage.setItem('my-cart', JSON.stringify(getData));
-    return toast.success('Added to cart', {
+    return toast.success('Successfully added to cart', {
         duration: 2000})
 
 }
@@ -66,7 +66,7 @@ const addToWishlist = (obj) => {
     }
     getData.push(obj);
     localStorage.setItem('my-wishlist', JSON.stringify(getData));
-    return toast.success('Added to wishlist', {
+    return toast.success('Successfully added to wishlist', {
         duration: 2000});
 };
 

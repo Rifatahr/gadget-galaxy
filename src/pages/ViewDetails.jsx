@@ -5,6 +5,7 @@ import { useLoaderData, useParams } from "react-router-dom";
 import { AiOutlineShoppingCart } from "react-icons/ai";
 import { MdFavoriteBorder } from "react-icons/md";
 import { addToCart, addToWishlist, getWishlist } from "../components/Utility";
+import { Toaster } from "react-hot-toast";
 
 const ViewDetails = () => {
   const { id } = useParams();
@@ -55,6 +56,9 @@ const ViewDetails = () => {
   return (
     /* Main Layout Wrapper */
     <div className="relative w-full bg-gray-50 pb-24 md:pb-64">
+      {/* 2. Toast Container component (displays notifications in top-right corner) */}
+      <Toaster position="top-center" reverseOrder={false} />
+
       {/* Header Section */}
       <div className="bg-[#9538E2] text-white pt-8 pb-36 md:pb-48 px-4">
         <Heading
