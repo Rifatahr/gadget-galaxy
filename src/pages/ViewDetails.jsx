@@ -15,6 +15,10 @@ const ViewDetails = () => {
     document.title = "Product Details | Gadget Heaven";
   }, []);
 
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [id]);
+
   const allData = data?.find((item) => item.product_id === parseInt(id)) || {};
 
   const {
