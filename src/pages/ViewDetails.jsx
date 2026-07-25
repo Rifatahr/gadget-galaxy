@@ -12,8 +12,8 @@ const ViewDetails = () => {
   const data = useLoaderData();
 
   useEffect(() => {
-    window.scrollTo(0, 0);
-  }, [id]);
+    document.title = "Product Details | Gadget Heaven";
+  }, []);
 
   const allData = data?.find((item) => item.product_id === parseInt(id)) || {};
 
@@ -75,7 +75,7 @@ const ViewDetails = () => {
 
       {/* Product Details Card */}
       <div className="w-11/12 max-w-5xl mx-auto bg-white text-black p-6 md:p-8 rounded-3xl shadow-xl border border-gray-100 -mt-20 md:-mt-28 relative z-10 flex flex-col md:flex-row gap-8 lg:gap-10 items-stretch">
-      
+
         {/* Left Side: Image Container */}
         <div className="w-full md:w-5/12 rounded-2xl flex justify-center items-center self-stretch min-h-74 md:min-h-100">
           <img
@@ -95,11 +95,10 @@ const ViewDetails = () => {
           </p>
 
           <p
-            className={`font-medium text-sm border-2 p-1 w-28 rounded-4xl flex justify-center items-center ${
-              availability
+            className={`font-medium text-sm border-2 p-1 w-28 rounded-4xl flex justify-center items-center ${availability
                 ? "text-[#309C08] bg-[#eaf5e6] border-[#309C08]"
                 : "text-red-600 bg-red-100 border-red-600"
-            }`}
+              }`}
           >
             {availability ? "In Stock" : "Out of Stock"}
           </p>
@@ -127,9 +126,8 @@ const ViewDetails = () => {
                 {[...Array(5)].map((_, i) => (
                   <FaStar
                     key={i}
-                    className={`text-lg ${
-                      i < newRating ? "text-amber-400" : "text-gray-200"
-                    }`}
+                    className={`text-lg ${i < newRating ? "text-amber-400" : "text-gray-200"
+                      }`}
                   />
                 ))}
               </div>
@@ -144,11 +142,10 @@ const ViewDetails = () => {
             <button
               onClick={handleAddToCart}
               disabled={!availability}
-              className={`btn px-6 py-2.5 rounded-full text-white font-semibold shadow-md border-none flex items-center gap-2 transition-all duration-200 ${
-                availability
+              className={`btn px-6 py-2.5 rounded-full text-white font-semibold shadow-md border-none flex items-center gap-2 transition-all duration-200 ${availability
                   ? "bg-[#9538E2] hover:bg-[#7e2ec2] active:scale-95"
                   : "bg-gray-400 cursor-not-allowed opacity-75"
-              }`}
+                }`}
             >
               Add to cart <AiOutlineShoppingCart className="text-xl" />
             </button>
@@ -156,11 +153,10 @@ const ViewDetails = () => {
             <button
               onClick={handleAddToWishlist}
               disabled={isWishlisted}
-              className={`p-3 border rounded-full transition-all duration-200 shadow-sm ${
-                isWishlisted
+              className={`p-3 border rounded-full transition-all duration-200 shadow-sm ${isWishlisted
                   ? "bg-gray-100 text-gray-300 border-gray-200 cursor-not-allowed"
                   : "bg-white text-gray-600 border-gray-300 hover:bg-gray-50 hover:text-red-500 active:scale-95"
-              }`}
+                }`}
             >
               <MdFavoriteBorder className="text-xl" />
             </button>
