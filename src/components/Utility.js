@@ -4,11 +4,11 @@ import toast from "react-hot-toast";
 
 // Get Cart Data from LocalStorage
 const getAllCartData = () => {
-  const getDataLS = localStorage.getItem('my-cart');
-  if (getDataLS) {
-    return JSON.parse(getDataLS);
-  }
-  return [];
+    const getDataLS = localStorage.getItem('my-cart');
+    if (getDataLS) {
+        return JSON.parse(getDataLS);
+    }
+    return [];
 };
 
 
@@ -18,14 +18,16 @@ const addToCart = (obj) => {
     const getData = getAllCartData();
     const checkDuplicate = getData.find(item => item.product_id === obj.product_id);
     if (checkDuplicate) {
-        return toast.error('already added to cart', {
-            duration: 2000});
+        return toast.error('already added to cart', { duration: 2000 });
 
     }
     getData.push(obj);
     localStorage.setItem('my-cart', JSON.stringify(getData));
-    return toast.success('Successfully added to cart', {
-        duration: 2000})
+
+    // Dispatch custom event to notify Navbar
+    window.dispatchEvent(new Event("cartUpdated"));
+
+    return toast.success('Successfully added to cart', { duration: 2000 })
 
 }
 
@@ -33,6 +35,7 @@ const addToCart = (obj) => {
 // clear all data of cart in ls
 const clearAllItemCart = () => {
     localStorage.removeItem("my-cart");
+    window.dispatchEvent(new Event("cartUpdated"));
 
 };
 
@@ -44,16 +47,19 @@ const removeProduct = (id) => {
     localStorage.setItem('my-cart', JSON.stringify(deleteData));
     toast.success('Item removed from cart');
 
+    window.dispatchEvent(new Event("cartUpdated"));
+    toast.success('Item removed from cart');
+
 }
 
-// wishlist.
+// wishlist
 // get
 const getAllWishlistData = () => {
     const getDataLS = localStorage.getItem('my-wishlist');
     if (getDataLS) {
-    return JSON.parse(getDataLS);
-  }
-  return [];
+        return JSON.parse(getDataLS);
+    }
+    return [];
 };
 
 // add
@@ -61,34 +67,41 @@ const addToWishlist = (obj) => {
     const getData = getAllWishlistData();
     const checkDuplicate = getData.find(item => item.product_id === obj.product_id);
     if (checkDuplicate) {
-        return toast.error('already added to wishlist', {
-            duration: 2000  });
+        return toast.error('already added to wishlist', { duration: 2000 });
     }
     getData.push(obj);
     localStorage.setItem('my-wishlist', JSON.stringify(getData));
+
+    // Dispatch custom event to notify Navbar
+    window.dispatchEvent(new Event("wishlistUpdated"));
+
     return toast.success('Successfully added to wishlist', {
-        duration: 2000});
+        duration: 2000
+    });
 };
 
 // Remove single item from Wishlist (Added)
 const removeFromWishlist = (id) => {
-  const getData = getAllWishlistData();
-  const deleteData = getData.filter(item => item.product_id !== id);
-  localStorage.setItem('my-wishlist', JSON.stringify(deleteData));
-  toast.success('Item removed from wishlist');
+    const getData = getAllWishlistData();
+    const deleteData = getData.filter(item => item.product_id !== id);
+    localStorage.setItem('my-wishlist', JSON.stringify(deleteData));
+    window.dispatchEvent(new Event("wishlistUpdated"));
+    toast.success('Item removed from wishlist');
+
 };
 
 
 
 
-export { 
-    addToCart, 
-    getAllCartData, 
+export {
+    addToCart,
+    getAllCartData,
     getAllCartData as getCart,
-    getAllWishlistData, 
+    getAllWishlistData,
     getAllWishlistData as getWishlist,
-    addToWishlist, 
-    clearAllItemCart, 
+    addToWishlist,
+    clearAllItemCart,
     removeProduct,
     removeProduct as removeFromCart,
-    removeFromWishlist };
+    removeFromWishlist
+};

@@ -1,14 +1,14 @@
 import { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import Heading from "../components/Heading";
 import toast, { Toaster } from "react-hot-toast";
-import { 
-  getCart, 
-  getWishlist, 
-  removeFromCart, 
-  removeFromWishlist, 
+import {
+  getCart,
+  getWishlist,
+  removeFromCart,
+  removeFromWishlist,
   addToCart,
-  clearAllItemCart 
+  clearAllItemCart
 } from "../components/Utility";
 import modalSuccessImg from "../assets/Group.png";
 import { RxCrossCircled } from "react-icons/rx";
@@ -18,26 +18,27 @@ import { FaArrowCircleDown } from "react-icons/fa";
 
 const Dashboard = () => {
   const navigate = useNavigate();
-
-  const [activeTab, setActiveTab] = useState("cart");
+  const location = useLocation(); //  Access location state
+  const [activeTab, setActiveTab] = useState(location.state?.tab || "cart");
   const [cartItems, setCartItems] = useState([]);
   const [wishlistItems, setWishlistItems] = useState([]);
   const [totalCost, setTotalCost] = useState(0);
   const [purchaseAmount, setPurchaseAmount] = useState(0);
-
-  // 1. State for controlling the modal visibility reliably
   const [isModalOpen, setIsModalOpen] = useState(false);
-
-  // 2. State to track current sort direction ('desc' | 'asc' | null)
   const [sortOrder, setSortOrder] = useState(null);
+
+
+useEffect(() => {
+    if (location.state?.tab) {
+      setActiveTab(location.state.tab);
+    }
+  }, [location.state]);
 
   useEffect(() => {
     document.title = "Dashboard | Gadget Heaven";
+      loadData();
   }, []);
 
-  useEffect(() => {
-    loadData();
-  }, []);
 
   const loadData = () => {
     const storedCart = getCart() || [];
@@ -50,7 +51,7 @@ const Dashboard = () => {
     setTotalCost(sum);
   };
 
-  // 3. Enhanced Sort Handler (Toggles High->Low and Low->High with Toast)
+  //  Enhanced Sort Handler (Toggles High->Low and Low->High with Toast)
   const handleSortByPrice = () => {
     if (cartItems.length <= 1) return;
 
@@ -70,7 +71,7 @@ const Dashboard = () => {
     );
   };
 
-const handleDeleteFromCart = (id) => {
+  const handleDeleteFromCart = (id) => {
     removeFromCart(id);
     loadData();
     setSortOrder(null); // Reset sort state when item removed
@@ -98,7 +99,7 @@ const handleDeleteFromCart = (id) => {
     setIsModalOpen(true); // Triggers modal display
   };
 
-// 3. Close Modal and navigate to Home
+  // 3. Close Modal and navigate to Home
   const handleCloseModal = () => {
     setIsModalOpen(false);
     navigate("/");
@@ -118,21 +119,19 @@ const handleDeleteFromCart = (id) => {
         <div className="flex justify-center pt-8 space-x-4 text-lg">
           <button
             onClick={() => setActiveTab("cart")}
-            className={`px-10 py-2 rounded-full font-medium transition-all ${
-              activeTab === "cart"
-                ? "bg-white text-[#9538E2] font-bold shadow-md"
-                : "border border-white text-white hover:bg-white/10"
-            }`}
+            className={`px-10 py-2 rounded-full font-medium transition-all ${activeTab === "cart"
+              ? "bg-white text-[#9538E2] font-bold shadow-md"
+              : "border border-white text-white hover:bg-white/10"
+              }`}
           >
             Cart
           </button>
           <button
             onClick={() => setActiveTab("wishlist")}
-            className={`px-10 py-2 rounded-full font-medium transition-all ${
-              activeTab === "wishlist"
-                ? "bg-white text-[#9538E2] font-bold shadow-md"
-                : "border border-white text-white hover:bg-white/10"
-            }`}
+            className={`px-10 py-2 rounded-full font-medium transition-all ${activeTab === "wishlist"
+              ? "bg-white text-[#9538E2] font-bold shadow-md"
+              : "border border-white text-white hover:bg-white/10"
+              }`}
           >
             Wishlist
           </button>
@@ -153,29 +152,27 @@ const handleDeleteFromCart = (id) => {
                 <button
                   disabled={cartItems.length <= 1}
                   onClick={handleSortByPrice}
-                  className={`btn rounded-full px-6 font-semibold flex items-center gap-2 transition-all ${
-                    cartItems.length <= 1
-                      ? "bg-gray-200 text-gray-400 border-gray-200 cursor-not-allowed"
-                      : "border-[#9538E2] text-[#9538E2] hover:bg-[#9538E2] hover:text-white"
-                  }`}
+                  className={`btn rounded-full px-6 font-semibold flex items-center gap-2 transition-all ${cartItems.length <= 1
+                    ? "bg-gray-200 text-gray-400 border-gray-200 cursor-not-allowed"
+                    : "border-[#9538E2] text-[#9538E2] hover:bg-[#9538E2] hover:text-white"
+                    }`}
                 >
                   Sort by Price{" "}
                   {sortOrder === "desc"
-                    ? <FaArrowCircleDown className="text-lg"/>
+                    ? <FaArrowCircleDown className="text-lg" />
                     : sortOrder === "asc"
-                    ? <FaArrowCircleUp className="text-lg" />
-                    : ""}
-                  
-                 
+                      ? <FaArrowCircleUp className="text-lg" />
+                      : ""}
+
+
                 </button>
                 <button
                   disabled={cartItems.length === 0 || totalCost === 0}
                   onClick={handlePurchase}
-                  className={`btn rounded-full px-8 text-white font-semibold ${
-                    cartItems.length === 0 || totalCost === 0
-                      ? "bg-gray-400 cursor-not-allowed border-none"
-                      : "bg-[#9538E2] hover:bg-[#7e2ec2] border-none"
-                  }`}
+                  className={`btn rounded-full px-8 text-white font-semibold ${cartItems.length === 0 || totalCost === 0
+                    ? "bg-gray-400 cursor-not-allowed border-none"
+                    : "bg-[#9538E2] hover:bg-[#7e2ec2] border-none"
+                    }`}
                 >
                   Purchase
                 </button>
