@@ -12,7 +12,7 @@ const ViewDetails = () => {
   const data = useLoaderData();
 
   useEffect(() => {
-    document.title = "Product Details | Gadget Heaven";
+    document.title = `Product Details | ${product_title}`;
   }, []);
 
   useEffect(() => {
