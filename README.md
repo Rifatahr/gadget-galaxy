@@ -6,8 +6,7 @@ A modern, responsive e-commerce web application for browsing gadgets, viewing de
 
 ## 🚀 Live Demo
 
-> *(Add your live site link here, e.g., Netlify / Vercel link)*  
-[Live Website Link]( https://gadget-g-galaxy.netlify.app/ )
+> [Live Website Link]( https://gadget-g-galaxy.netlify.app/ )
 
 ---
 
