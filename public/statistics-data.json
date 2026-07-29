@@ -1,0 +1,86 @@
+[
+  {
+    "product_id": 1,
+    "product_title": "MacBook Pro M4 Max",
+    "price": 1999,
+    "rating": 4.8
+  },
+  {
+    "product_id": 2,
+    "product_title": "ASUS ROG Zephyrus",
+    "price": 1899,
+    "rating": 4.7
+  },
+  {
+    "product_id": 3,
+    "product_title": "Samsung Book 5",
+    "price": 1699,
+    "rating": 4.6
+  },
+  {
+    "product_id": 4,
+    "product_title": "iPhone 17 Pro Max",
+    "price": 1399,
+    "rating": 4.9
+  },
+  {
+    "product_id": 5,
+    "product_title": "Google Pixel 10 Pro",
+    "price": 899,
+    "rating": 4.6
+  },
+  {
+    "product_id": 6,
+    "product_title": "Samsung Galaxy S26",
+    "price": 1099,
+    "rating": 4.5
+  },
+  {
+    "product_id": 7,
+    "product_title": "Apple Watch S11",
+    "price": 499,
+    "rating": 4.7
+  },
+  {
+    "product_id": 8,
+    "product_title": "Galaxy Watch 7 Pro",
+    "price": 449,
+    "rating": 4.5
+  },
+  {
+    "product_id": 9,
+    "product_title": "GaN Charger 140W",
+    "price": 89,
+    "rating": 4.6
+  },
+  {
+    "product_id": 10,
+    "product_title": "MagSafe Charger 25W",
+    "price": 79,
+    "rating": 4.4
+  },
+  {
+    "product_id": 11,
+    "product_title": "Power Bank 30000mAh",
+    "price": 110,
+    "rating": 4.5
+  },
+  {
+    "product_id": 12,
+    "product_title": "Slim Power Bank",
+    "price": 59,
+    "rating": 4.3
+  },
+  {
+    "product_id": 13,
+    "product_title": "iPad Pro M4",
+    "price": 1299,
+    "rating": 4.8
+  },
+  {
+    "product_id": 14,
+    "product_title": "Galaxy Tab S10 Ultra",
+    "price": 1199,
+    "rating": 4.7
+  }
+]

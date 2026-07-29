@@ -13,12 +13,12 @@ const routes = createBrowserRouter([
     path: '/',
     element: <MainLayout></MainLayout>,
     errorElement: <ErrorPage></ErrorPage>,
-    children:[
+    children: [
       {
         path: '/',
         element: <Home></Home>,
         loader: () => fetch('../category-data.json'),
-        children:[
+        children: [
           {
             path: '/',
             element: <Cards></Cards>,
@@ -29,21 +29,22 @@ const routes = createBrowserRouter([
             element: <Cards></Cards>,
             loader: () => fetch('../gadget-galaxy-data.json'),
           },
-          
 
-          
+
+
         ],
-        
+
       },
       {
-            path: '/product/:id',
-            element: <ViewDetails></ViewDetails>,
-              loader: () => fetch(`/gadget-galaxy-data.json`),
-            
-          },
+        path: '/product/:id',
+        element: <ViewDetails></ViewDetails>,
+        loader: () => fetch(`/gadget-galaxy-data.json`),
+
+      },
       {
         path: '/Statistics',
         element: <Statistics></Statistics>,
+        loader: () => fetch(`/statistics-data.json`),
       },
       {
         path: '/DashBoard',

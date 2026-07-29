@@ -106,7 +106,7 @@ useEffect(() => {
   };
 
   return (
-    <div className="relative w-full bg-gray-50 min-h-screen pb-24">
+    <div className="relative w-full bg-gray-50  pb-24">
       {/* Header */}
       <div className="bg-[#9538E2] text-white pt-8 pb-12 px-4">
         <Heading
