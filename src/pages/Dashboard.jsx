@@ -12,8 +12,7 @@ import {
 } from "../components/Utility";
 import modalSuccessImg from "../assets/Group.png";
 import { RxCrossCircled } from "react-icons/rx";
-import { FaArrowCircleUp } from "react-icons/fa";
-import { FaArrowCircleDown } from "react-icons/fa";
+import { HiSortAscending, HiSortDescending } from "react-icons/hi";
 
 
 const Dashboard = () => {
@@ -159,9 +158,9 @@ useEffect(() => {
                 >
                   Sort by Price{" "}
                   {sortOrder === "desc"
-                    ? <FaArrowCircleDown className="text-lg" />
+                    ? <HiSortDescending className="text-xl" />
                     : sortOrder === "asc"
-                      ? <FaArrowCircleUp className="text-lg" />
+                      ? <HiSortAscending className="text-xl" />
                       : ""}
 
 

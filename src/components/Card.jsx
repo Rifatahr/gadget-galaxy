@@ -1,12 +1,11 @@
-
 import { Link } from "react-router-dom";
 
 const Card = ({product}) => {
     const {product_image, product_title, price, product_id} = product || {};
    
     return (
-       <div className="card bg-base-100 shadow-xl p-5 w-full self-start h-full rounded-2xl">
-      <figure className="h-full">
+       <div className="card bg-base-100 shadow-xl p-5 w-full self-start h-96 rounded-2xl">
+      <figure className=" h-full">
         <img
           src={product_image}
           alt="Your Most wanted Device"
