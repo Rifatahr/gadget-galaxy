@@ -25,7 +25,7 @@ const Statistics = () => {
   return (
     <div className="bg-gray-100 pb-16">
       {/* Purple Hero Header */}
-      <div className="bg-purple-700 text-white py-10 px-4 text-center">
+      <div className="bg-[#9538E2] text-white py-10 px-4 text-center">
         <Heading
           title={"Statistics"}
           subtitle={
@@ -131,3 +131,9 @@ const Statistics = () => {
 };
 
 export default Statistics;
+
+
+
+
+
+

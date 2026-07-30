@@ -8,7 +8,7 @@ const Banner = () => {
     /* Outer wrapper with margin matching Navbar and bottom spacing for the half-projecting image */
     <div className="mx-3 sm:mx-6 lg:mx-12 mb-28 sm:mb-44 md:mb-60">
       {/* Main purple box with generous bottom padding so content never touches the image */}
-      <div className="relative bg-purple-700 text-center pt-8 sm:pt-12 md:pt-16 pb-32 sm:pb-52 md:pb-64 px-4 sm:px-8 text-white rounded-b-3xl">
+      <div className="relative bg-[#9538E2] text-center pt-8 sm:pt-12 md:pt-16 pb-32 sm:pb-52 md:pb-64 px-4 sm:px-8 text-white rounded-b-3xl">
         
         {/* Banner Content Container */}
         <div className="max-w-4xl mx-auto flex flex-col items-center">

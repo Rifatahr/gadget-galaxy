@@ -6,7 +6,7 @@ import Dashboard from "../pages/Dashboard"
 import ErrorPage from "../pages/ErrorPage"
 import Cards from "../components/Cards"
 import ViewDetails from "../pages/ViewDetails"
-
+import Finder from "../pages/Finder"
 
 const routes = createBrowserRouter([
   {
@@ -49,6 +49,11 @@ const routes = createBrowserRouter([
       {
         path: '/DashBoard',
         element: <Dashboard></Dashboard>,
+      },
+      {
+        path: '/Finder',
+        element: <Finder></Finder>,
+        loader: () => fetch(`/gadget-galaxy-data.json`),
       },
     ]
   }

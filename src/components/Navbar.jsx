@@ -34,7 +34,7 @@ const Navbar = () => {
 
   // Aligned margins with Banner (mx-3 sm:mx-6 lg:mx-12)
   const navbarColorSwitch = isHome
-    ? "mx-3 sm:mx-6 lg:mx-12 mt-3 bg-purple-700 text-white rounded-t-3xl"
+    ? "mx-3 sm:mx-6 lg:mx-12 mt-3 bg-[#9538E2] text-white rounded-t-3xl"
     : "bg-white text-gray-800 shadow-sm";
 
   return (
@@ -53,6 +53,7 @@ const Navbar = () => {
               <li><NavLink to="/">Home</NavLink></li>
               <li><NavLink to="/Statistics">Statistics</NavLink></li>
               <li><NavLink to="/DashBoard">Dashboard</NavLink></li>
+              <li><NavLink to="/Finder">Gadget Finder</NavLink></li>
             </ul>
           </div>
 
@@ -80,6 +81,11 @@ const Navbar = () => {
             <li>
               <NavLink className={({ isActive }) => `font-medium ${isActive ? "underline font-bold" : ""}`} to="/DashBoard">
                 Dashboard
+              </NavLink>
+            </li>
+            <li>
+              <NavLink className={({ isActive }) => `font-medium ${isActive ? "underline font-bold" : ""}`} to="/Finder">
+                Gadget Finder
               </NavLink>
             </li>
           </ul>

@@ -7,7 +7,7 @@ const CategoryCard = ({ category }) => {
       className={({ isActive }) =>
         `py-3 px-3 text-center rounded-4xl w-full md:w-auto lg:w-10/12 mx-auto font-bold cursor-pointer text-lg block transition-colors duration-200 ${
           isActive
-            ? "bg-purple-700 text-white"
+            ? "bg-[#9538E2] text-white"
             : "bg-gray-100 text-gray-500 hover:bg-purple-200 "
         }`
       }

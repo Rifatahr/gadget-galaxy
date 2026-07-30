@@ -3,11 +3,15 @@
 Welcome to **Gadget Heaven**, a modern e-commerce web application designed to help users explore, filter, and manage their favorite tech gadgets seamlessly.
 
 ---
+## 🚀 Live Demo -> https://gadget-g-galaxy.netlify.app/
 
-## 🔗 Important Links
+---
+## 🔗 Requirement Document Link
 
-* **Live Website:** [https://gadget-g-galaxy.netlify.app/] 
-* **Requirement Document:** [https://github.com/Rifatahr/gadget-galaxy.git]
+* **React Router:** [https://reactrouter.com/start/data/installation]
+* **React Icons:** [https://react-icons.github.io/react-icons/]
+* **React-Hot-Toast:** [https://react-hot-toast.com/]
+* **Recharts:**  [https://recharts.github.io/]
 
 ---
 
