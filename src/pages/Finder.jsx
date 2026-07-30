@@ -32,7 +32,7 @@ const products = useLoaderData();
           }
         />
       </div>
-      <div className="max-w-7xl mx-auto px-4 my-8 grid grid-cols-1 lg:grid-cols-4 gap-8  ">
+      <div className="max-w-7xl mx-auto px-4 mt-8 mb-16 grid grid-cols-1 lg:grid-cols-4 gap-8  ">
         {/* Filters Sidebar */}
         <div className="bg-white p-6 rounded-2xl shadow-md border border-gray-100 self-start">
           <h2 className="text-xl font-bold text-gray-800 mb-6">Filter Preference</h2>
